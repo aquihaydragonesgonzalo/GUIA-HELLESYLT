@@ -165,6 +165,40 @@
             }
         ];
 
+        const GEIRANGER_BUS_AUDIO_TRACKS = [
+            {
+                id: 1,
+                title: "1. Los Miradores (Flydalsjuvet y Ørnesvingen)",
+                text: "Para entender realmente la magnitud de este lugar, tienen que elevarse. El pueblo es hermoso, pero las vistas que han hecho famoso a Geiranger se disfrutan desde la carretera. Hay tres miradores principales, y si tenéis tiempo, intentad visitar al menos dos: 1. Flydalsjuvet (El Desfiladero de Flydal): Es el más famoso para la foto clásica de postal. Hay una plataforma moderna y una roca saliente donde obtendrán la foto perfecta del fiordo con nuestro barco anclado. Es relativamente fácil de acceder. 2. Ørnesvingen (El Nido del Águila): Este mirador se encuentra en la carretera que asciende desde el pueblo (la carretera del Águila) y ofrece una vista espectacular del fiordo abierto, con el Pretendiente y las Siete Hermanas visibles desde arriba. Es una vista impresionante al salir de Geiranger."
+            }
+        ];
+
+        const GEIRANGER_VILLAGE_AUDIO_TRACKS = [
+            {
+                id: 1,
+                title: "1. El Final del Fiordo y el Color Turquesa",
+                text: "¡Bienvenidos a Geiranger! Siéntanse libres de estirar las piernas. Han llegado al punto final del fiordo, el valle que le da nombre. Miren el paisaje: es un anfiteatro natural donde las montañas se elevan en 360 grados a nuestro alrededor. Lo primero que deben notar es el color del agua aquí en la orilla. ¿Ven ese tono azul turquesa lechoso? Ese color se debe al limo glaciar. El río Geirangelva, que corre desde las montañas, arrastra consigo partículas finísimas de roca que han sido molidas por el movimiento del hielo. Este material refleja la luz de una manera única, dándole al agua ese brillo irreal. Geiranger es pequeño, pintoresco y totalmente dedicado a la experiencia del fiordo. Recuerden: están en el corazón mismo de un sitio Patrimonio Mundial de la UNESCO."
+            },
+            {
+                id: 2,
+                title: "2. El Corazón del Pueblo",
+                text: "El pueblo de Geiranger es muy fácil de recorrer a pie. Su centro de actividad se concentra en un par de hoteles y el muelle principal. Les recomiendo dar un paseo por la zona de las tiendas de recuerdos, pero hay dos paradas obligatorias que le dan sabor al lugar: 1. La Iglesia de Geiranger: Es una iglesia octogonal de madera, muy encantadora y representativa de la zona, construida en 1842. 2. Geiranger Sjokolade (Chocolate): Si eres amante del dulce, no te puedes perder la tienda de chocolate local. Es famosa por sus bombones hechos a mano que utilizan ingredientes locales, como el queso brunost o incluso hierbas del fiordo. Disfruten de la atmósfera tranquila y del olor a pino y agua salada antes de que subamos a las alturas."
+            },
+            {
+                id: 3,
+                title: "3. El Sendero Acuático: FOSSEVANDRING",
+                text: "Si buscan una experiencia inmersiva que ponga a prueba sus pulmones, no busquen más allá del Fossevandring, o 'El Paseo de la Cascada'. Este sendero comienza justo aquí, en el puerto. Sigan la orilla del río Geirangelva, que se precipita sobre la cascada Storfossen (La Gran Cascada). El Fossevandring es una maravilla de ingeniería y diseño escénico. Es un camino de más de 300 escalones y pasarelas de acero que asciende por el lateral del desfiladero, permitiéndoles experimentar la fuerza de la cascada a centímetros de distancia. No es una caminata fácil, ¡pero es corta y vale la pena! Tomen su tiempo y deténganse en los puentes panorámicos. Sentirán el temblor de la roca y la bruma húmeda en la cara. Es el mejor lugar para fotografiar la energía pura del agua. Una vez que lleguen a la cima, habrán superado los 327 escalones y serán recompensados con la llegada al Centro Noruego del Fiordo (Norsk Fjordsenter), un excelente lugar para aprender sobre la vida y la geología del Geirangerfjord. ¡Es un 'dos por uno' perfecto!"
+            }
+        ];
+
+        const GEIRANGER_DEPARTURE_AUDIO_TRACKS = [
+            {
+                id: 1,
+                title: "1. La Despedida de Geiranger",
+                text: "Ya sea que decidas pasear tranquilamente junto al río o ascender a las alturas, recuerda la fuerza natural que creó este lugar. Geiranger es una obra de arte esculpida por el hielo y el agua durante la última Era Glacial. Es un lugar que nos invita a la reflexión y al asombro. Cuando sea hora de volver a embarcar, mira una vez más el color turquesa del agua. Es el 'polvo de estrellas' de los glaciares, la prueba tangible de la magia de Noruega. Que disfrutes tu tiempo. Y como decimos en Noruega, Ha det bra! ¡Que te vaya bien!"
+            }
+        ];
+
         const INITIAL_ITINERARY = [
             {
                 id: '0', title: 'Desayuno Buffet MSC', startTime: '08:00', endTime: '08:30',
@@ -239,7 +273,8 @@
                 keyDetails: 'Tour 1.5 horas.',
                 priceNOK: 550, priceEUR: 47, type: 'sightseeing', completed: false,
                 ticketUrl: 'https://www.geirangerfjord.no/panoramic-bus-geiranger-4',
-                instagramUrl: 'https://www.instagram.com/explore/tags/flydalsjuvet/'
+                instagramUrl: 'https://www.instagram.com/explore/tags/flydalsjuvet/',
+                hasAudioGuide: true
             },
             {
                 id: '7', title: 'Almuerzo Relax Geiranger', startTime: '14:15', endTime: '16:00',
@@ -259,7 +294,8 @@
                 tips: 'El Waterfall Walk tiene escaleras (327 escalones) pero vistas increíbles. Inicia cerca del Hotel Union o desde el puerto subiendo.',
                 keyDetails: '2 horas libres.',
                 priceNOK: 0, priceEUR: 0, type: 'sightseeing', completed: false,
-                instagramUrl: 'https://www.instagram.com/explore/tags/fossevandring/'
+                instagramUrl: 'https://www.instagram.com/explore/tags/fossevandring/',
+                hasAudioGuide: true
             },
             {
                 id: '9', title: 'Embarque Ferry (VUELTA)', startTime: '18:00', endTime: '18:30',
@@ -278,7 +314,8 @@
                 fullDescription: 'Disfruta del viaje de vuelta con una perspectiva diferente y luz de atardecer.',
                 tips: 'Relájate en cubierta.',
                 keyDetails: 'Llegada 19:35.',
-                priceNOK: 0, priceEUR: 0, type: 'transport', completed: false
+                priceNOK: 0, priceEUR: 0, type: 'transport', completed: false,
+                hasAudioGuide: true
             },
             {
                 id: '11', title: 'Llegada y Tiempo Libre', startTime: '19:35', endTime: '20:30',
@@ -1437,6 +1474,15 @@
                 } else if (activity.id === '4') {
                     setActiveAudioTracks(GEIRANGER_FERRY_AUDIO_TRACKS);
                     setActiveAudioTitle("Audioguía Ferry Geiranger");
+                } else if (activity.id === '6') {
+                    setActiveAudioTracks(GEIRANGER_BUS_AUDIO_TRACKS);
+                    setActiveAudioTitle("Audioguía Tour Panorámico");
+                } else if (activity.id === '8') {
+                    setActiveAudioTracks(GEIRANGER_VILLAGE_AUDIO_TRACKS);
+                    setActiveAudioTitle("Audioguía Pueblo Geiranger");
+                } else if (activity.id === '10') {
+                    setActiveAudioTracks(GEIRANGER_DEPARTURE_AUDIO_TRACKS);
+                    setActiveAudioTitle("Audioguía Despedida");
                 }
                 setSelectedActivity(null); // Close detail modal
             };
