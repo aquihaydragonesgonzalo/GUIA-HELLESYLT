@@ -1,0 +1,7 @@
+{
+  "name": "GUIA HELLESYLT",
+  "description": "",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
