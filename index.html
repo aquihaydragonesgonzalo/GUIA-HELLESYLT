@@ -137,6 +137,34 @@
             }
         ];
 
+        const GEIRANGER_FERRY_AUDIO_TRACKS = [
+            {
+                id: 1,
+                title: "1. La Inmersión en el Fiordo",
+                text: "Viajeros, mientras el ferry se aleja de Hellesylt, estamos entrando oficialmente en el corazón de la Noruega de los fiordos. El cuerpo de agua en el que nos adentramos ahora es el Geirangerfjord. No es un fiordo cualquiera: desde 2005, es reconocido por la UNESCO como Patrimonio de la Humanidad, un honor que comparte por su belleza prístina e inalterada. Miren las paredes que nos rodean. Son montañas que se hunden cientos de metros bajo el nivel del mar. La profundidad aquí es asombrosa, y sin embargo, el agua es tan quieta y clara que a menudo parece que estamos navegando sobre un espejo. Prepárense. Lo que van a ver en los próximos 60 minutos es una sinfonía de agua y roca. La mayor parte de los puntos de interés estarán a babor (lado izquierdo) o a estribor (lado derecho) del ferry. Les avisaré en cada momento."
+            },
+            {
+                id: 2,
+                title: "2. El Velo de la Novia (Brudesløret)",
+                text: "Miren ahora hacia Babor, nuestro lado izquierdo. La primera estrella del espectáculo es la cascada Brudesløret, o El Velo de la Novia. Fíjense bien: su caída es amplia, pero la fuerza del viento y la roca hace que el agua se disperse antes de tocar el fiordo. Parece una capa de tul blanco, delgada y etérea, deslizándose sobre la roca oscura. De ahí su nombre. Cae desde una altura de unos 300 metros, y en días de sol, pueden capturar un arcoíris muy especial en su bruma. Es una de las cascadas más elegantes de Noruega. Es un anuncio de lo que está por venir. Aguanten la respiración, porque el plato fuerte nos espera justo después de la próxima curva."
+            },
+            {
+                id: 3,
+                title: "3. Las Siete Hermanas",
+                text: "Ahora sí. Mirad hacia Estribor, nuestro lado derecho. Lo que ven es majestuoso: Las Siete Hermanas, o De syv søstrene. Es la cascada más fotografiada de todo el fiordo. La leyenda dice que son siete hermosas hermanas que bailan en la montaña. Aunque la nieve o la lluvia determinen si vemos las siete en su máximo esplendor, la roca tallada les dará una idea de su magnitud. En primavera, o después de días de lluvia, sus siete chorros caen con tal fuerza que la bruma parece elevarse hasta el cielo. Es una historia de amor no correspondido la que le da vida a este trío de cascadas. Dice la leyenda que estas siete hermanas atrajeron la atención de un soltero muy persistente... que se encuentra justo enfrente de ellas."
+            },
+            {
+                id: 4,
+                title: "4. El Pretendiente (Friaren)",
+                text: "Giren 180 grados y miren directamente al frente de las Siete Hermanas, hacia Babor. Ahí tenéis al otro protagonista: El Pretendiente, o Friaren. Es una cascada que cae de forma irregular, con una roca saliente en la mitad que le da una forma que la gente local bromea al decir que se parece a una botella de aguardiente. La leyenda cuenta que El Pretendiente, borracho o no, intentó cortejar a cada una de las siete hermanas, pero fue rechazado por todas. Desde entonces, ha quedado petrificado y con el corazón roto justo enfrente de ellas, incapaz de apartar la mirada. Es un guiño divertido a la historia del fiordo. Este es el momento de sacar vuestra cámara. La vista de Las Siete Hermanas y El Pretendiente enfrentados a través del fiordo es la postal más icónica de vuestro viaje."
+            },
+            {
+                id: 5,
+                title: "5. La Granja Skageflå y la Llegada",
+                text: "Mientras el ferry se dirige a su destino final, quiero que miren hacia Estribor de nuevo, hacia las alturas. Justo en ese pequeño saliente, a cientos de metros sobre el agua, verán lo que parece un punto de color en el acantilado. Esa es la granja abandonada Skageflå. Es una de las muchas granjas de montaña (fjordgårder) que un día estuvieron habitadas, accesibles solo por escaleras de madera o por barco. Vivir aquí era duro y peligroso; la gente ataba a sus hijos a cuerdas para que no cayeran al fiordo. Es un testamento a la tenacidad del pueblo noruego. Y ahora, el fiordo comienza a cerrarse. Delante de nosotros, en el valle, se revela el pequeño pueblo de Geiranger. Prepárense para desembarcar. Han navegado por uno de los lugares más bellos del planeta. Disfruten su tiempo en Geiranger. Tusen takk! ¡Muchas gracias!"
+            }
+        ];
+
         const INITIAL_ITINERARY = [
             {
                 id: '0', title: 'Desayuno Buffet MSC', startTime: '08:00', endTime: '08:30',
@@ -188,7 +216,8 @@
                 tips: 'Usa este tiempo para fotos de las cascadas desde el barco. La mejor vista de las 7 Hermanas es desde el agua.',
                 keyDetails: 'Duración 1h 05m.',
                 priceNOK: 585, priceEUR: 50, type: 'transport', completed: false,
-                instagramUrl: 'https://www.instagram.com/explore/tags/geirangerfjord/'
+                instagramUrl: 'https://www.instagram.com/explore/tags/geirangerfjord/',
+                hasAudioGuide: true
             },
             {
                 id: '5', title: 'Llegada y Almuerzo Rápido', startTime: '12:05', endTime: '12:45',
@@ -373,13 +402,13 @@
                             {/* Audio Guide Button */}
                             {activity.hasAudioGuide && (
                                 <button 
-                                    onClick={() => onOpenAudio()}
+                                    onClick={() => onOpenAudio(activity)}
                                     className="flex items-center justify-center w-full mb-4 p-4 rounded-xl bg-slate-800 text-white font-bold shadow-lg hover:bg-slate-900 transition-all active:scale-95 border border-slate-700"
                                 >
                                     <Headphones className="mr-3 text-emerald-400" size={24} />
                                     <div>
                                         <div className="leading-none">Escuchar Audioguía</div>
-                                        <div className="text-[10px] font-normal text-slate-400 mt-1">5 Pistas - Narración Local</div>
+                                        <div className="text-[10px] font-normal text-slate-400 mt-1">Narración Local y Leyendas</div>
                                     </div>
                                 </button>
                             )}
@@ -415,7 +444,7 @@
             );
         };
 
-        const AudioGuideModal = ({ onClose }) => {
+        const AudioGuideModal = ({ tracks, title, onClose }) => {
             const [currentTrack, setCurrentTrack] = useState(null);
             const [isPlaying, setIsPlaying] = useState(false);
 
@@ -452,14 +481,14 @@
                         <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-950">
                             <div className="flex items-center text-white">
                                 <Headphones className="mr-2 text-emerald-400" />
-                                <h3 className="font-bold text-lg">Audioguía Hellesylt</h3>
+                                <h3 className="font-bold text-lg">{title}</h3>
                             </div>
                             <button onClick={onClose} className="p-1 text-slate-400 hover:text-white"><X size={20}/></button>
                         </div>
 
                         {/* Player Content */}
                         <div className="flex-1 overflow-y-auto p-4 space-y-3">
-                            {HELLESYLT_AUDIO_TRACKS.map((track) => {
+                            {tracks.map((track) => {
                                 const isActive = currentTrack === track.id;
                                 return (
                                     <div key={track.id} className={`rounded-xl p-3 border transition-all ${isActive ? 'bg-slate-800 border-emerald-500 shadow-emerald-900/20 shadow-lg' : 'bg-slate-800/50 border-slate-700 hover:bg-slate-800'}`}>
@@ -1340,7 +1369,8 @@
             const [selectedActivity, setSelectedActivity] = useState(null);
             const [countdown, setCountdown] = useState('');
             const [countdownLabel, setCountdownLabel] = useState('Salida');
-            const [showAudioPlayer, setShowAudioPlayer] = useState(false);
+            const [activeAudioTracks, setActiveAudioTracks] = useState(null);
+            const [activeAudioTitle, setActiveAudioTitle] = useState('');
 
             useEffect(() => {
                 if ('geolocation' in navigator) {
@@ -1400,9 +1430,15 @@
                 setActiveTab('map');
             };
 
-            const handleOpenAudio = () => {
+            const handleOpenAudio = (activity) => {
+                if (activity.id === '2') {
+                    setActiveAudioTracks(HELLESYLT_AUDIO_TRACKS);
+                    setActiveAudioTitle("Audioguía Hellesylt");
+                } else if (activity.id === '4') {
+                    setActiveAudioTracks(GEIRANGER_FERRY_AUDIO_TRACKS);
+                    setActiveAudioTitle("Audioguía Ferry Geiranger");
+                }
                 setSelectedActivity(null); // Close detail modal
-                setShowAudioPlayer(true); // Open audio modal
             };
 
             return (
@@ -1436,7 +1472,13 @@
                         />
                     )}
 
-                    {showAudioPlayer && <AudioGuideModal onClose={() => setShowAudioPlayer(false)} />}
+                    {activeAudioTracks && (
+                        <AudioGuideModal 
+                            tracks={activeAudioTracks} 
+                            title={activeAudioTitle}
+                            onClose={() => setActiveAudioTracks(null)} 
+                        />
+                    )}
 
                     <nav className="bg-white border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-30 pb-safe shrink-0">
                         <div className="flex justify-around items-center h-16">
